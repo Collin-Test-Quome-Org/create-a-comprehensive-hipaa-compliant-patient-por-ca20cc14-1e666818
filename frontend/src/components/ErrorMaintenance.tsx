@@ -4,24 +4,33 @@ import { motion } from 'framer-motion'
 
 export function ErrorMaintenance() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] bg-secondary p-8 rounded-xl shadow-lg mx-auto max-w-lg mt-12">
-      <motion.div
-        initial={{ scale: 0.7, rotate: 10 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ type: 'spring', stiffness: 180, damping: 14 }}
-        className="mb-4"
-      >
-        <Wrench size={64} className="text-primary" />
-      </motion.div>
-      <h1 className="text-3xl font-bold mb-2 text-primary font-nunito">Portal Under Maintenance</h1>
-      <p className="text-lg text-gray-700 mb-6 text-center font-nunito">
-        Our digital vault is getting a tune-up for even stronger security and a better experience.<br />
-        Please check back soon.<br />
-        If you need urgent assistance, contact our support team below.
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="flex flex-col items-center justify-center min-h-[60vh] bg-secondary rounded-xl shadow-lg p-10 mx-auto max-w-xl"
+      role="status"
+      aria-live="polite"
+    >
+      <span className="inline-flex items-center justify-center rounded-full bg-slate-100 p-4 mb-4">
+        <Wrench size={48} className="text-primary" />
+      </span>
+      <h1 className="text-3xl font-bold text-primary mb-4" style={{ fontFamily: 'Nunito, sans-serif' }}>
+        Scheduled System Maintenance
+      </h1>
+      <p className="text-lg text-muted-foreground mb-6 max-w-md text-center" style={{ fontFamily: 'Nunito, sans-serif' }}>
+        For your safety, we're enhancing our encryption shields and updating secure pathways. The portal will be back up and running soon.<br />
+        Need urgent help?
       </p>
-      <Button id="maintenance-support-btn" asChild>
-        <a href="mailto:support@hipaasecureportal.com">Contact Support</a>
+      <Button
+        asChild
+        variant="outline"
+        id="maintenance-contact-support-btn"
+        className="px-8 py-2 text-lg"
+      >
+        <a href="mailto:support@hipaasecureportal.com" target="_blank" rel="noopener noreferrer">
+          Contact Support
+        </a>
       </Button>
-    </div>
+    </motion.div>
   )
 }
