@@ -4,23 +4,24 @@ import { motion } from 'framer-motion'
 
 export function ErrorMaintenance() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[70vh] bg-slate-50 px-4">
+    <div className="flex flex-col items-center justify-center min-h-[70vh] bg-secondary p-8 rounded-xl shadow-lg mx-auto max-w-lg mt-12">
       <motion.div
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ type: 'spring', stiffness: 180, damping: 22 }}
-        className="bg-white rounded-2xl shadow-xl px-10 py-12 flex flex-col items-center"
+        initial={{ scale: 0.7, rotate: 10 }}
+        animate={{ scale: 1, rotate: 0 }}
+        transition={{ type: 'spring', stiffness: 180, damping: 14 }}
+        className="mb-4"
       >
-        <Wrench className="text-[#1d4ed8] mb-4 w-16 h-16 animate-spin-slow" />
-        <h1 className="font-bold text-3xl mb-2 text-[#1d4ed8] font-nunito">Scheduled Maintenance</h1>
-        <p className="text-slate-700 mb-6 text-center max-w-md font-nunito">
-          Our Secure Patient Portal is currently undergoing important upgrades to keep your data safe and accessible.<br/>
-          We'll be back online soon. For urgent matters, please contact our support team directly.
-        </p>
-        <Button asChild id="maintenance-contact-btn" className="font-nunito font-bold text-lg px-6 py-2">
-          <a href="mailto:support@hipaasecureportal.com">Contact Support</a>
-        </Button>
+        <Wrench size={64} className="text-primary" />
       </motion.div>
+      <h1 className="text-3xl font-bold mb-2 text-primary font-nunito">Portal Under Maintenance</h1>
+      <p className="text-lg text-gray-700 mb-6 text-center font-nunito">
+        Our digital vault is getting a tune-up for even stronger security and a better experience.<br />
+        Please check back soon.<br />
+        If you need urgent assistance, contact our support team below.
+      </p>
+      <Button id="maintenance-support-btn" asChild>
+        <a href="mailto:support@hipaasecureportal.com">Contact Support</a>
+      </Button>
     </div>
   )
 }

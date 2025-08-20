@@ -1,5 +1,5 @@
-import { MaintenanceNotice } from '@/components/MaintenanceNotice'
+import { MaintenanceMessage } from '@/components/MaintenanceMessage'
 
 export function MaintenancePage() {
-  return <MaintenanceNotice />
+  return <MaintenanceMessage />
 }
